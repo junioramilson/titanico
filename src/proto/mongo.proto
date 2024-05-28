@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package mongo;
+
+service MongoService {
+  rpc ExecuteOperation (MongoRequest) returns (MongoResponse);
+}
+
+message MongoRequest {
+  string operation = 1;
+  string collectionName = 2;
+  string query = 3;
+  string data = 4;
+}
+
+message MongoResponse {
+  string result = 1;
+}
